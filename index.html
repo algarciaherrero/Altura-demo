@@ -22,15 +22,73 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap">
+    </noscript>
     
     <link rel="stylesheet" href="style.css">
 
     <style>
+        /* Ajustes Móvil Generales */
         @media (max-width: 768px) {
             .navbar .nav-links .link { display: none !important; }
             .navbar .nav-links .btn-outline { display: none !important; }
             .lang-switch-mobile { margin: 0 !important; }
+        }
+
+        /* --- ESTILOS DE LA CUADRÍCULA DE LOGOS --- */
+        .alliance-logos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem 4rem; /* Separación vertical y horizontal equilibrada */
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .alliance-item {
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .alliance-item:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+            filter: drop-shadow(0 0 8px rgba(255,255,255,0.2));
+        }
+
+        /* CLASE BASE PARA TODOS LOS LOGOS */
+        .official-logo-img {
+            height: 50px;       /* Altura estándar */
+            width: auto;        /* El ancho se adapta solo */
+            object-fit: contain;
+            filter: brightness(0) invert(1); /* Vuelve todo blanco */
+        }
+
+        /* CLASE PARA LOGOS ALTOS (RAKEZ, Meydan) */
+        .logo-tall {
+            height: 68px !important; /* Les damos más altura para compensar */
+        }
+
+        /* CLASE PARA LOGOS ANCHOS (SBC, DIFC, IFZA) */
+        .logo-wide {
+            height: 38px !important; /* Un poco más bajos para no verse gigantes */
+        }
+
+        /* AJUSTES ESPECÍFICOS PARA MÓVIL */
+        @media (max-width: 768px) {
+            .alliance-logos-grid { gap: 2rem; }
+            .official-logo-img { height: 40px; }
+            .logo-tall { height: 55px !important; }
+            .logo-wide { height: 30px !important; }
         }
     </style>
 
@@ -231,31 +289,31 @@
             <div class="alliance-logos-grid">
                 
                 <a href="https://www.difc.com/" target="_blank" class="alliance-item">
-                    <img src="difc_white.png" alt="DIFC" class="official-logo-img">
+                    <img src="difc_white.webp" alt="DIFC" class="official-logo-img logo-wide" width="120" height="38">
                 </a>
 
                 <a href="https://www.dubaidet.gov.ae/en/" target="_blank" class="alliance-item">
-                    <img src="det.png" alt="Dubai Economy & Tourism" class="official-logo-img">
+                    <img src="det.webp" alt="Dubai Economy & Tourism" class="official-logo-img" width="100" height="50">
                 </a>
 
                 <a href="https://dmcc.ae/" target="_blank" class="alliance-item">
-                    <img src="dmcc.png" alt="DMCC" class="official-logo-img">
+                    <img src="dmcc.webp" alt="DMCC" class="official-logo-img" width="110" height="50">
                 </a>
 
                 <a href="https://ifza.com/en/" target="_blank" class="alliance-item">
-                    <img src="IFZA.png" alt="IFZA" class="official-logo-img">
+                    <img src="IFZA.webp" alt="IFZA" class="official-logo-img logo-wide" width="120" height="38">
                 </a>
 
                 <a href="https://rakez.com/" target="_blank" class="alliance-item">
-                    <img src="rakez.png" alt="RAKEZ" class="official-logo-img">
+                    <img src="rakez.webp" alt="RAKEZ" class="official-logo-img logo-tall" width="80" height="68">
                 </a>
 
                 <a href="https://www.meydanfz.ae/" target="_blank" class="alliance-item">
-                    <img src="meydan.png" alt="Meydan Free Zone" class="official-logo-img">
+                    <img src="meydan.webp" alt="Meydan Free Zone" class="official-logo-img logo-tall" width="80" height="68">
                 </a>
 
                 <a href="https://www.spanishbusinesscouncil.ae/" target="_blank" class="alliance-item">
-                    <img src="sbc.png" alt="Spanish Business Council UAE" class="official-logo-img">
+                    <img src="sbc.webp" alt="Spanish Business Council UAE" class="official-logo-img logo-wide" width="160" height="38">
                 </a>
 
             </div>
@@ -283,50 +341,6 @@
                 margin: 0 auto 3.5rem auto;
                 font-size: 1rem;
                 line-height: 1.6;
-            }
-
-            /* GRID DE LOGOS */
-            .alliance-logos-grid {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center; /* Centrado elegante */
-                align-items: center;
-                gap: 4rem; /* Espaciado generoso */
-                max-width: 1000px;
-                margin: 0 auto;
-            }
-
-            /* Ahora es un <a>, funciona como bloque flexible */
-            .alliance-item {
-                opacity: 0.7;
-                transition: all 0.3s ease;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                cursor: pointer; /* Mano de clic */
-            }
-
-            .alliance-item:hover {
-                opacity: 1;
-                transform: translateY(-2px);
-                filter: drop-shadow(0 0 8px rgba(255,255,255,0.2));
-            }
-
-            /* MAGIA PARA HACER TODO BLANCO */
-            .official-logo-img {
-                height: 40px; /* Altura estándar para todos */
-                width: auto;
-                object-fit: contain;
-                /* El Truco: Convierte negro, azul, rojo o dorado en BLANCO PURO */
-                filter: brightness(0) invert(1); 
-            }
-
-            /* AJUSTE MOVIL */
-            @media (max-width: 768px) {
-                .alliance-logos-grid {
-                    gap: 2.5rem;
-                }
-                .official-logo-img { height: 35px; }
             }
         </style>
         <div class="container" style="margin-top: 3rem;">
