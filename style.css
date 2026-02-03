@@ -2,7 +2,7 @@
 :root {
     /* Colors */
     --color-midnight: #131c28;      
-    --color-gold: #dab46d;          
+    --color-gold: #dab46d;           
     --color-gold-light: #e6cfa0;    
     --color-bone: #F9FAFB;
     --color-stone: #F2F4F5;
@@ -388,14 +388,14 @@ body {
 .legal-links a:hover { color: var(--color-white); }
 .separator { margin: 0 10px; }
 
-/* --- 9. PARTNERS BLOCK (B2B Style - Compacto & High Contrast) --- */
+/* --- 9. PARTNERS BLOCK (B2B Style) --- */
 .partners-cta {
     grid-column: 1 / -1; 
     margin-top: 2.5rem; 
     padding: 1.5rem 2rem; 
     
     background-color: rgba(255, 255, 255, 0.05); 
-    border: 1px solid rgba(218, 180, 109, 0.3);   
+    border: 1px solid rgba(218, 180, 109, 0.3);    
     border-radius: var(--border-radius);
     
     display: flex;
@@ -435,7 +435,82 @@ body {
     transform: translateX(5px);
 }
 
-/* --- 10. MOBILE FIX --- */
+/* =======================================================
+   10. STRATEGIC ALLIANCES (LOGOS & LAYOUT NUEVO)
+   ======================================================= */
+.alliance-container {
+    margin-top: 6rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.alliance-header h3 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+}
+
+.alliance-header p {
+    color: #94a3b8;
+    max-width: 700px;
+    margin: 0 auto 3.5rem auto;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* GRID DE LOGOS (Equilibrado Visualmente) */
+.alliance-logos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem 4rem; /* Separación vertical y horizontal */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.alliance-item {
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+.alliance-item:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.2));
+}
+
+/* CLASES DE IMAGEN (Control de Tamaños) */
+.official-logo-img {
+    height: 50px;       /* Altura base estándar */
+    width: auto;        /* El ancho se calcula automáticamente */
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Convierte cualquier color a BLANCO PURO */
+    display: block;
+}
+
+/* Variación: Logos Altos (RAKEZ, Meydan) */
+.logo-tall {
+    height: 68px !important; 
+}
+
+/* Variación: Logos Anchos (SBC, IFZA, DIFC) */
+.logo-wide {
+    height: 38px !important; 
+}
+
+
+/* --- 11. MOBILE FIX --- */
 @media (max-width: 768px) {
     
     .container {
@@ -503,11 +578,19 @@ body {
     }
     .link-item { width: 100%; }
 
+    /* Fix para Alianzas en Móvil */
+    .alliance-container { margin-top: 4rem; padding-top: 3rem; }
+    .alliance-logos-grid { gap: 2rem; }
+    .alliance-header h3 { font-size: 1.5rem; }
+    .official-logo-img { height: 40px; }
+    .logo-tall { height: 55px !important; }
+    .logo-wide { height: 30px !important; }
+
     .partners-cta {
         flex-direction: column;
         text-align: center;
         padding: 1.5rem;
-        margin-top: 3rem; /* En móvil dejamos aire normal */
+        margin-top: 3rem;
     }
 
     .partners-content p {

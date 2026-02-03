@@ -32,63 +32,11 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Ajustes Móvil Generales */
+        /* Correcciones críticas solo para móvil */
         @media (max-width: 768px) {
             .navbar .nav-links .link { display: none !important; }
             .navbar .nav-links .btn-outline { display: none !important; }
             .lang-switch-mobile { margin: 0 !important; }
-        }
-
-        /* --- ESTILOS DE LA CUADRÍCULA DE LOGOS --- */
-        .alliance-logos-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem 4rem; /* Separación vertical y horizontal equilibrada */
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .alliance-item {
-            opacity: 0.7;
-            transition: all 0.3s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .alliance-item:hover {
-            opacity: 1;
-            transform: translateY(-2px);
-            filter: drop-shadow(0 0 8px rgba(255,255,255,0.2));
-        }
-
-        /* CLASE BASE PARA TODOS LOS LOGOS */
-        .official-logo-img {
-            height: 50px;       /* Altura estándar */
-            width: auto;        /* El ancho se adapta solo */
-            object-fit: contain;
-            filter: brightness(0) invert(1); /* Vuelve todo blanco */
-        }
-
-        /* CLASE PARA LOGOS ALTOS (RAKEZ, Meydan) */
-        .logo-tall {
-            height: 68px !important; /* Les damos más altura para compensar */
-        }
-
-        /* CLASE PARA LOGOS ANCHOS (SBC, DIFC, IFZA) */
-        .logo-wide {
-            height: 38px !important; /* Un poco más bajos para no verse gigantes */
-        }
-
-        /* AJUSTES ESPECÍFICOS PARA MÓVIL */
-        @media (max-width: 768px) {
-            .alliance-logos-grid { gap: 2rem; }
-            .official-logo-img { height: 40px; }
-            .logo-tall { height: 55px !important; }
-            .logo-wide { height: 30px !important; }
         }
     </style>
 
@@ -318,31 +266,6 @@
 
             </div>
         </div>
-
-        <style>
-            .alliance-container {
-                margin-top: 6rem;
-                padding-top: 4rem;
-                border-top: 1px solid rgba(255, 255, 255, 0.05);
-                text-align: center;
-            }
-
-            .alliance-header h3 {
-                font-size: 1.8rem;
-                color: #ffffff;
-                margin-bottom: 1rem;
-                font-family: 'Manrope', sans-serif;
-                font-weight: 600;
-            }
-
-            .alliance-header p {
-                color: #94a3b8;
-                max-width: 700px;
-                margin: 0 auto 3.5rem auto;
-                font-size: 1rem;
-                line-height: 1.6;
-            }
-        </style>
         <div class="container" style="margin-top: 3rem;">
             <div class="partners-cta">
                 <div class="partners-content">
